@@ -2,7 +2,7 @@ setwd("/Users/johannesfischer/git/dc_crime")
 
 library(readr)
 library(tidyverse)
-dc_crimes_raw <- read_csv("Downloads/dc-crimes-search-results.csv")
+dc_crimes_raw <- read_csv("~/Downloads/dc-crimes-search-results.csv")
 
 library(tidycensus)
 library(dplyr)
@@ -25,8 +25,7 @@ for (year in years) {
         geography = "state", 
         variables = vars, 
         state = "DC", 
-        year = year, survey = "acs5", 
-        key = census_api_key
+        year = year, survey = "acs5"
     )
     
     # Append the data to the list, along with the corresponding year
